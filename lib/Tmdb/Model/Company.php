@@ -27,6 +27,7 @@ class Company extends AbstractModel
     private $logo;
     private $logoPath;
     private $name;
+    private $originCountry;
     private $parentCompany;
 
     public static $properties = [
@@ -36,6 +37,7 @@ class Company extends AbstractModel
         'id',
         'logo_path',
         'name',
+        'origin_country',
         'parent_company'
     ];
 
@@ -170,6 +172,25 @@ class Company extends AbstractModel
     public function getName()
     {
         return $this->name;
+    }
+    
+    /**
+     * @param  mixed $originCountry
+     * @return $this
+     */
+    public function setOriginCountry($originCountry)
+    {
+        $this->originCountry = $originCountry;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOriginCountry()
+    {
+        return $this->originCountry;
     }
 
     /**
