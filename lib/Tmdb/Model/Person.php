@@ -38,6 +38,11 @@ class Person extends AbstractModel implements PersonInterface
     /**
      * @var string
      */
+    private $knownForDepartment;
+    
+    /**
+     * @var string
+     */
     private $biography;
     /**
      * @var \DateTime
@@ -131,6 +136,7 @@ class Person extends AbstractModel implements PersonInterface
     public static $properties = [
         'adult',
         'also_known_as',
+        'known_for_department',
         'biography',
         'birthday',
         'deathday',
@@ -195,6 +201,25 @@ class Person extends AbstractModel implements PersonInterface
     public function getAlsoKnownAs()
     {
         return $this->alsoKnownAs;
+    }
+    
+    /**
+     * @param  string $knownForDepartment
+     * @return $this
+     */
+    public function setKnownForDepartment($knownForDepartment)
+    {
+        $this->knownForDepartment = $knownForDepartment;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKnownForDepartment()
+    {
+        return $this->knownForDepartment;
     }
 
     /**
